@@ -1,0 +1,420 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5efe0;
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+/* ===== Hero Banner ===== */
+.hero-banner {
+    background: linear-gradient(160deg, #f9e8c0 0%, #f0d49a 40%, #e8c87a 100%);
+    padding: 30px 20px 20px;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 30px;
+    background: #f5efe0;
+    border-radius: 30px 30px 0 0;
+}
+
+/* 竹子装饰 */
+.hero-banner::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 28px,
+        rgba(120,160,80,0.15) 28px,
+        rgba(120,160,80,0.15) 32px
+    );
+    border-left: 3px solid rgba(120,160,80,0.2);
+    border-right: 3px solid rgba(120,160,80,0.2);
+}
+
+.hero-text {
+    flex: 1;
+    z-index: 1;
+}
+
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.hero-title .big {
+    font-size: 36px;
+    font-weight: 900;
+    color: #8b3a0f;
+    line-height: 1.1;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+    font-family: "STKaiti", "KaiTi", "楷体", serif;
+}
+
+.hero-title .mid {
+    font-size: 22px;
+    font-weight: 700;
+    color: #c0622a;
+    line-height: 1.2;
+    font-family: "STKaiti", "KaiTi", "楷体", serif;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #c0622a, #8b3a0f);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-top: 8px;
+    letter-spacing: 2px;
+}
+
+/* 古籍图片占位 */
+.book-placeholder {
+    width: 140px;
+    height: 160px;
+    background: linear-gradient(135deg, #f0e0b0, #d4b870);
+    border-radius: 8px;
+    border: 2px solid #c8a050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.book-placeholder::before {
+    content: '📖';
+    font-size: 40px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0.3;
+}
+
+.book-inner {
+    text-align: center;
+    color: #8b5a2b;
+    font-size: 13px;
+    line-height: 2;
+    font-family: "STKaiti", "KaiTi", "楷体", serif;
+}
+
+.hero-tags {
+    display: none;
+}
+
+/* ===== 主体 ===== */
+.main-wrap {
+    padding: 0 15px 30px;
+}
+
+/* ===== Tab ===== */
+.tab-bar {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0 15px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px 0;
+    border: 2px solid #c8a050;
+    background: transparent;
+    color: #8b5a2b;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #e8c060, #c8900a);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 3px 10px rgba(200,144,10,0.4);
+}
+
+/* ===== 表单 ===== */
+.form-panel {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.form-panel.hidden {
+    display: none;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    padding: 16px 18px;
+    border-bottom: 1px solid #f0e8d8;
+    gap: 10px;
+}
+
+.form-row:last-child {
+    border-bottom: none;
+}
+
+.form-row label {
+    color: #555;
+    font-size: 15px;
+    min-width: 75px;
+    flex-shrink: 0;
+}
+
+.input-field {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #333;
+    text-align: right;
+    background: transparent;
+    font-family: inherit;
+}
+
+.input-field::placeholder {
+    color: #bbb;
+}
+
+.radio-group {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.radio-btn {
+    padding: 6px 20px;
+    border: 1.5px solid #ddd;
+    background: #f8f8f8;
+    color: #666;
+    font-size: 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.radio-btn.active {
+    background: #e8f4ff;
+    border-color: #4a9eff;
+    color: #4a9eff;
+    font-weight: 600;
+}
+
+.date-picker {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    color: #bbb;
+    font-size: 14px;
+}
+
+.date-picker .arrow {
+    font-size: 20px;
+    color: #ccc;
+    line-height: 1;
+}
+
+/* ===== CTA 按钮 ===== */
+.cta-wrap {
+    margin: 20px 0;
+}
+
+.cta-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #e03030, #c01010);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 15px rgba(200,20,20,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shine 2.5s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 200%; }
+}
+
+.cta-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(200,20,20,0.3);
+}
+
+/* ===== 功能区 ===== */
+.feature-section {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 15px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border: 1px solid #e8d8b8;
+}
+
+.feature-title {
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    color: #5a3a1a;
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.feature-title::before,
+.feature-title::after {
+    content: '◆';
+    color: #c8a050;
+    font-size: 10px;
+    margin: 0 8px;
+    vertical-align: middle;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.feature-item {
+    background: #fdf8f0;
+    border: 1px solid #e8d8b8;
+    border-radius: 10px;
+    padding: 18px 10px 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-item:active {
+    transform: scale(0.97);
+}
+
+/* 功能图标 */
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.feature-icon.jade {
+    background: linear-gradient(135deg, #7ec8a0, #4a9a70);
+    color: white;
+    font-family: "STKaiti", "KaiTi", "楷体", serif;
+    font-size: 18px;
+    box-shadow: 0 3px 8px rgba(74,154,112,0.4);
+}
+
+.feature-icon.fan {
+    background: linear-gradient(135deg, #f5e0b0, #d4b060);
+    color: #8b5a2b;
+    font-family: "STKaiti", "KaiTi", "楷体", serif;
+    font-size: 14px;
+    border-radius: 50% 50% 50% 0;
+    box-shadow: 0 3px 8px rgba(180,140,60,0.4);
+}
+
+.feature-icon.bagua {
+    background: linear-gradient(135deg, #e8d090, #c0a040);
+    color: #5a3a1a;
+    font-size: 30px;
+    box-shadow: 0 3px 8px rgba(180,140,40,0.4);
+}
+
+.feature-icon.ding {
+    background: linear-gradient(135deg, #80c8c0, #3a9890);
+    color: white;
+    font-family: "STKaiti", "KaiTi", "楷体", serif;
+    font-size: 16px;
+    box-shadow: 0 3px 8px rgba(58,152,144,0.4);
+}
+
+.feature-icon.zodiac {
+    background: linear-gradient(135deg, #f0d0a0, #d0a060);
+    font-size: 32px;
+    box-shadow: 0 3px 8px rgba(180,130,60,0.4);
+}
+
+.feature-icon.scroll {
+    background: linear-gradient(135deg, #e8d8a0, #c0a840);
+    font-size: 30px;
+    box-shadow: 0 3px 8px rgba(180,150,40,0.4);
+}
+
+.feature-name {
+    font-size: 15px;
+    font-weight: bold;
+    color: #3a2a1a;
+    margin-bottom: 4px;
+}
+
+.feature-desc {
+    font-size: 12px;
+    color: #999;
+}
+
+/* ===== 免责声明 ===== */
+.disclaimer {
+    text-align: center;
+    font-size: 11px;
+    color: #bbb;
+    margin-top: 20px;
+}
