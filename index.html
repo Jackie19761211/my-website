@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>AI智能起名 · 定制好名 陪伴一生</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 顶部 Banner -->
+    <div class="hero-banner">
+        <div class="hero-text">
+            <div class="hero-title">
+                <span class="big">定制</span>
+                <span class="mid">远伴</span>
+                <span class="big">好名</span>
+                <span class="mid">一生</span>
+            </div>
+            <div class="hero-badge">AI</div>
+        </div>
+        <div class="hero-book">
+            <img src="book.png" alt="古籍" class="book-img" onerror="this.style.display='none'">
+            <div class="book-placeholder">
+                <div class="book-inner">
+                    <p>国学智慧</p>
+                    <p>天才五格</p>
+                    <p>音律韵调</p>
+                    <p>生辰八字</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-tags">
+            <span>国学智慧</span>
+            <span>天才五格</span>
+            <span>音律韵调</span>
+            <span>生辰八字</span>
+        </div>
+    </div>
+
+    <!-- 主体内容 -->
+    <div class="main-wrap">
+
+        <!-- Tab 切换 -->
+        <div class="tab-bar">
+            <button class="tab-btn" onclick="switchTab(this, 'evaluate')">姓名评分</button>
+            <button class="tab-btn active" onclick="switchTab(this, 'naming')">智能起名</button>
+        </div>
+
+        <!-- 起名表单 -->
+        <div class="form-panel" id="naming">
+            <div class="form-row">
+                <label>姓氏：</label>
+                <input type="text" placeholder="请输入您的姓氏" class="input-field">
+            </div>
+            <div class="form-row">
+                <label>出生状态：</label>
+                <div class="radio-group">
+                    <button class="radio-btn active" onclick="selectRadio(this)">已出生</button>
+                    <button class="radio-btn" onclick="selectRadio(this)">未出生</button>
+                </div>
+            </div>
+            <div class="form-row">
+                <label>性别</label>
+                <div class="radio-group">
+                    <button class="radio-btn active" onclick="selectRadio(this)">男</button>
+                    <button class="radio-btn" onclick="selectRadio(this)">女</button>
+                </div>
+            </div>
+            <div class="form-row">
+                <label>出生时间</label>
+                <div class="date-picker" onclick="openDatePicker()">
+                    <span id="dateText">请选择出生日期或预产期</span>
+                    <span class="arrow">›</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 评分表单 -->
+        <div class="form-panel hidden" id="evaluate">
+            <div class="form-row">
+                <label>姓名：</label>
+                <input type="text" placeholder="请输入要评分的姓名" class="input-field">
+            </div>
+            <div class="form-row">
+                <label>性别</label>
+                <div class="radio-group">
+                    <button class="radio-btn active" onclick="selectRadio(this)">男</button>
+                    <button class="radio-btn" onclick="selectRadio(this)">女</button>
+                </div>
+            </div>
+            <div class="form-row">
+                <label>出生时间</label>
+                <div class="date-picker" onclick="openDatePicker()">
+                    <span>请选择出生日期</span>
+                    <span class="arrow">›</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA 按钮 -->
+        <div class="cta-wrap">
+            <button class="cta-btn" onclick="handleSubmit()">立即解锁定制好名</button>
+        </div>
+
+        <!-- 功能介绍 -->
+        <div class="feature-section">
+            <div class="feature-title">AI智能起名能力</div>
+            <div class="feature-grid">
+                <div class="feature-item" onclick="handleFeature(this)">
+                    <div class="feature-icon jade">起<br>名</div>
+                    <div class="feature-name">偏好起名</div>
+                    <div class="feature-desc">题材 风格 寓意</div>
+                </div>
+                <div class="feature-item" onclick="handleFeature(this)">
+                    <div class="feature-icon fan">起名</div>
+                    <div class="feature-name">定字起名</div>
+                    <div class="feature-desc">专属 定制 个性</div>
+                </div>
+                <div class="feature-item" onclick="handleFeature(this)">
+                    <div class="feature-icon bagua">☯</div>
+                    <div class="feature-name">八字分析</div>
+                    <div class="feature-desc">五行 纳音 喜用</div>
+                </div>
+                <div class="feature-item" onclick="handleFeature(this)">
+                    <div class="feature-icon ding">天<br>地</div>
+                    <div class="feature-name">三才五格</div>
+                    <div class="feature-desc">笔画 格数 配置</div>
+                </div>
+                <div class="feature-item" onclick="handleFeature(this)">
+                    <div class="feature-icon zodiac">🐂</div>
+                    <div class="feature-name">生肖匹配</div>
+                    <div class="feature-desc">属相 部首 宜忌</div>
+                </div>
+                <div class="feature-item" onclick="handleFeature(this)">
+                    <div class="feature-icon scroll">📜</div>
+                    <div class="feature-name">典籍引用</div>
+                    <div class="feature-desc">诗经 楚辞 诗歌</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="disclaimer">*报告内容由AI生成，仅供休闲娱乐。</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
